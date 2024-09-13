@@ -15,6 +15,7 @@
  */
 function logNames(items) {
   // TODO: use `forEach`
+  items.forEach((item) => console.log(item.name));
 }
 
 /**
@@ -23,6 +24,8 @@ function logNames(items) {
  */
 function getUppercaseNames(items) {
   // TODO: use `map`
+  const mappedArray = items.map((item) => toUpperCase(item.name));
+  return mappedArray;
 }
 
 /**
@@ -32,6 +35,8 @@ function getUppercaseNames(items) {
  */
 function getItemById(items, id) {
   // TODO: use `find`
+  const foundItem = items.find(item => item[id] === number);
+  return foundItem;
 }
 
 /**
@@ -41,6 +46,11 @@ function getItemById(items, id) {
  */
 function getItemPriceByName(items, name) {
   // TODO: use a loop!
+  for(const item in items){
+    if(item.name === name){
+      return item[price];
+    }
+  }
 }
 
 /**
@@ -50,6 +60,8 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
   // TODO: use `filter`
+  const result = items.filter(item => item[category] === category);
+  return result;
 }
 
 /**
@@ -58,6 +70,9 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
   // TODO: use `reduce`
+  const initialValue = 0;
+  const sumOfQuantity = items.reduce(accumulator, items[quantity] => accumulator + items[quantity], initialValue);
+  return sumOfQuantity;
 }
 
 /**
@@ -66,6 +81,9 @@ function countItems(items) {
  */
 function calculateTotalPrice(items) {
   // TODO: use `reduce`
+  const initialValue = 0;
+  const sumOfCost = items.reduce(accumulator, items[price] => accumulator + items[price], initialValue);
+  return sumOfCost;
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
